@@ -32,7 +32,7 @@ The pipeline performs the following steps:
 5.  **Build Docker Image**: If all tests pass, it builds a Docker image of the application named `stellar-array-controller:latest`.
 6.  **Simulate Deployment**: Performs a simulated deployment, echoing messages to the console indicating a successful deployment to a "Test Rig". In a real-world scenario, this step would deploy the application to a staging or production environment.
 
-## 🛠 Getting Started & Seeing CI/CD in Action
+##  Getting Started & Seeing CI/CD in Action
 
 1.  **Clone the repository :**
     ```bash
