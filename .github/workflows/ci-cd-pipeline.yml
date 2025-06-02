@@ -1,0 +1,54 @@
+# .github/workflows/ci-cd-pipeline.yml
+
+name: Stellar Array CI/CD 
+
+# Controls when the workflow will run
+on:
+  push: # Trigger on every push event
+    branches:
+      - main # Or your default branch name (e.g., master)
+  pull_request: # Also trigger on pull requests to main
+    branches:
+      - main
+
+jobs:
+  build-test-simulate-deploy:
+    name: Build, Test & Simulate Deploy 
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout Code 
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Python environment
+      - name: Set up Python 
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9' # Specify the Python version
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies 
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r pyptest
+
+      # Step 4: Run tests with pytest
+      - name: Run Tests 🧪
+        run: pytest
+
+      # Step 5: Build Docker image
+      # This step assumes Docker is available on the runner, which it is for GitHub-hosted runners.
+      - name: Build Docker Image 
+        run: |
+          docker build -t stellar-array-controller:latest .
+          echo "✅ Docker image built: stellar-array-controller:latest"
+
+      # Step 6: Simulate Deployment (e.g., to a test rig)
+      - name: Simulate Deployment to Test Rig  simulate_deploy_environment
+        run: |
+          echo " Simulating deployment to Test Rig..."
+          echo "Host: test-rig-alpha.stellarcorp.net"
+          echo "Application: stellar-array-controller:latest"
+          echo "✅ Deployment to Test Rig Successful!"
+          echo " Miniature Stellar Array Controller v$(date +%Y.%m.%d-%H%M%S) hypothetically deployed."
