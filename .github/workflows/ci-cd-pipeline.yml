@@ -6,7 +6,7 @@ name: Stellar Array CI/CD
 on:
   push: # Trigger on every push event
     branches:
-      - main # Or your default branch name (e.g., master)
+      - main # 
   pull_request: # Also trigger on pull requests to main
     branches:
       - main
@@ -25,7 +25,7 @@ jobs:
       - name: Set up Python 
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9' # Specify the Python version
+          python-version: '3.9' 
 
       # Step 3: Install dependencies
       - name: Install Dependencies 
@@ -38,7 +38,6 @@ jobs:
         run: pytest
 
       # Step 5: Build Docker image
-      # This step assumes Docker is available on the runner, which it is for GitHub-hosted runners.
       - name: Build Docker Image 
         run: |
           docker build -t stellar-array-controller:latest .
