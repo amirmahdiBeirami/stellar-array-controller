@@ -18,18 +18,6 @@ The application itself simulates the control of a stellar array, allowing for al
 * **Docker** (for containerization)
 * **GitHub Actions** (for CI/CD automation)
 
-##  Project Structure
-
-stellar-array-controller/
-├── .github/
-│   └── workflows/
-│       └── ci-cd-pipeline.yml  # GitHub Actions workflow definition
-├── Dockerfile                  # Instructions to build the Docker image
-├── requirements.txt            # Python project dependencies (e.g., pytest)
-├── stellar_controller.py       # Main Python application logic
-└── test_controller.py          # Pytest unit tests for the application
-└── README.md                   # This file
-
 
 ##  CI/CD Pipeline Overview
 
