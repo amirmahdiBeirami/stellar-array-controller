@@ -13,7 +13,7 @@ class StellarArray:
         # From:
         # message = f"{self.name} aligned to {self.alignment_degrees} degrees. Current Power: {self.power_output_gw} GW."
         # To (for example):
-        message = f"**CRITICAL UPDATE** {self.name} is now precisely aligned to {self.alignment_degrees} degrees. Power level stable at: {self.power_output_gw} GW. Version 1.1."   
+        message = f"{self.name} aligned to {self.alignment_degrees} degrees. Current Power: {self.power_output_gw} GW."   
         print(f"LOG: {message}")
         return message
 
