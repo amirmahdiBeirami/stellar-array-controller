@@ -4,16 +4,14 @@ class StellarArray:
     def __init__(self, name="Alpha-Quadrant Array"):
         self.name = name
         self.alignment_degrees = 0
-        self.power_output_gw = 100 # Initial power output in Gigawatts
+        # self.power_output_gw = 100 # Initial power output in Gigawatts
+        self.power_output_gw = 50   # Initial power output in Gigawatts # <<< (BUG!)
+
 
     def align(self, degrees: float) -> str:
         """Aligns the stellar array to the specified degrees."""
         self.alignment_degrees = degrees
-        # Initial version of the alignment message
-        # From:
-        # message = f"{self.name} aligned to {self.alignment_degrees} degrees. Current Power: {self.power_output_gw} GW."
-        # To (for example):
-        message = f"**CRITICAL UPDATE** {self.name} is now precisely aligned to {self.alignment_degrees} degrees. Power level stable at: {self.power_output_gw} GW. Version 1.1."   
+        message = f"{self.name} aligned to {self.alignment_degrees} degrees. Current Power: {self.power_output_gw} GW."
         print(f"LOG: {message}")
         return message
 
