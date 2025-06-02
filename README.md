@@ -27,7 +27,7 @@ The pipeline performs the following steps:
 
 1.  **Checkout Code**: Fetches the latest version of your repository's code.
 2.  **Set up Python**: Configures the specified Python environment (e.g., Python 3.9).
-3.  **Install Dependencies**: Installs necessary Python packages listed in `requirements.txt` (primarily `pytest`).
+3.  **Install Dependencies**: Installs necessary Python packages (primarily `pytest`).
 4.  **Run Tests**: Executes the automated tests using `pytest`. If any test fails, the pipeline stops, preventing deployment of faulty code.
 5.  **Build Docker Image**: If all tests pass, it builds a Docker image of the application named `stellar-array-controller:latest`.
 6.  **Simulate Deployment**: Performs a simulated deployment, echoing messages to the console indicating a successful deployment to a "Test Rig". In a real-world scenario, this step would deploy the application to a staging or production environment.
