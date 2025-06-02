@@ -10,7 +10,10 @@ class StellarArray:
         """Aligns the stellar array to the specified degrees."""
         self.alignment_degrees = degrees
         # Initial version of the alignment message
-        message = f"{self.name} aligned to {self.alignment_degrees} degrees. Current Power: {self.power_output_gw} GW."
+        # From:
+        # message = f"{self.name} aligned to {self.alignment_degrees} degrees. Current Power: {self.power_output_gw} GW."
+        # To (for example):
+        message = f"**CRITICAL UPDATE** {self.name} is now precisely aligned to {self.alignment_degrees} degrees. Power level stable at: {self.power_output_gw} GW. Version 1.1."   
         print(f"LOG: {message}")
         return message
 
