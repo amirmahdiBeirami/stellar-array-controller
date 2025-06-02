@@ -5,7 +5,7 @@ class StellarArray:
         self.name = name
         self.alignment_degrees = 0
         # self.power_output_gw = 100 # Initial power output in Gigawatts
-        self.power_output_gw = 50   # Initial power output in Gigawatts # <<< (BUG!)
+        self.power_output_gw = 50
 
 
     def align(self, degrees: float) -> str:
